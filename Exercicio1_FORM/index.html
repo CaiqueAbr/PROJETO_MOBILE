@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            background-color: rgb(224, 224, 224);
+            font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #main {
+            background-color: darkgray;
+
+        }
+        div {
+            display: flex;
+            align-items: center ;
+            justify-content: center;
+            margin: auto;
+            width: 80%; height: 80%;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 10px;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+    <h1 style="text-align: center;">Calculadora</h1>
+    <div>
+    <form action="">
+        <label for="">Digite o primeiro número:</label>
+        <input placeholder="0" type="number" name="num1" id="num1">
+        <label for="">Digite o segundo número:</label>
+        <input placeholder="0" type="number" name="num2" id="num2">
+
+        <label for="operacao">Operação</label>
+        <select name="operacao" id="operacoes">
+            <option value="dobro" id="dobro">Dobro (Primeiro número)</option>
+            <option value="triplo" id="triplo">Triplo(Primeiro número)</option>
+            <option value="quadruplo" id="quadruplo">Quádruplo(Primeiro número)</option>
+            <option value="quintuplo" id="quintuplo">Quintuplo(Primeiro número)</option>
+            <option value="quadrado" id="quadrado">Quadrado(Primeiro número)</option>
+            <option value="cubo" id="cubo">Cubo(Primeiro número)</option>
+            <option value="quarta" id="quarta">Quarta potência(Primeiro número)</option>
+            <option value="quinta" id="quinta">Quinta potência(Primeiro número)</option>
+            <option value="sexta" id="sexta">Sexta potência(Primeiro número)</option>
+            <option value="bhaskara" id="bhaskara">Bhaskara(Primeiro número A, Segundo número B, terceiro número C)</option>
+            <option value="media" id="media">Media aritmética entre os quatro número</option>
+            <option value="parim" id="parim">Par ou Ímpar</option>
+        </select>
+    </form>
+</div>
+</main>
+    <script>
+        function dobro(num1){
+            dob = document.getElementById("num1");
+
+
+        }
+    </script>
+</body>
+</html>
+
+bit.ly/etec_pam1_2ds_ds
