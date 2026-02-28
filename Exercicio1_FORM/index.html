@@ -34,38 +34,145 @@
     <main id="main">
     <h1 style="text-align: center;">Calculadora</h1>
     <div>
-    <form action="">
+    <form id="form"action="">
         <label for="">Digite o primeiro número:</label>
         <input placeholder="0" type="number" name="num1" id="num1">
         <label for="">Digite o segundo número:</label>
         <input placeholder="0" type="number" name="num2" id="num2">
+        <label for="">Digite o primeiro número:</label>
+        <input placeholder="0" type="number" name="num3" id="num3">
+        <label for="">Digite o segundo número:</label>
+        <input placeholder="0" type="number" name="num4" id="num4">
 
         <label for="operacao">Operação</label>
         <select name="operacao" id="operacoes">
-            <option value="dobro" id="dobro">Dobro (Primeiro número)</option>
-            <option value="triplo" id="triplo">Triplo(Primeiro número)</option>
-            <option value="quadruplo" id="quadruplo">Quádruplo(Primeiro número)</option>
-            <option value="quintuplo" id="quintuplo">Quintuplo(Primeiro número)</option>
-            <option value="quadrado" id="quadrado">Quadrado(Primeiro número)</option>
-            <option value="cubo" id="cubo">Cubo(Primeiro número)</option>
-            <option value="quarta" id="quarta">Quarta potência(Primeiro número)</option>
-            <option value="quinta" id="quinta">Quinta potência(Primeiro número)</option>
-            <option value="sexta" id="sexta">Sexta potência(Primeiro número)</option>
-            <option value="bhaskara" id="bhaskara">Bhaskara(Primeiro número A, Segundo número B, terceiro número C)</option>
-            <option value="media" id="media">Media aritmética entre os quatro número</option>
-            <option value="parim" id="parim">Par ou Ímpar</option>
+            <option value="dobro">Dobro (Primeiro número)</option>
+            <option value="triplo">Triplo(Primeiro número)</option>
+            <option value="quadruplo">Quádruplo(Primeiro número)</option>
+            <option value="quintuplo">Quintuplo(Primeiro número)</option>
+            <option value="quadrado">Quadrado(Primeiro número)</option>
+            <option value="cubo">Cubo(Primeiro número)</option>
+            <option value="quarta">Quarta potência(Primeiro número)</option>
+            <option value="quinta">Quinta potência(Primeiro número)</option>
+            <option value="sexta">Sexta potência(Primeiro número)</option>
+            <option value="bhaskara">Bhaskara(Primeiro número A, Segundo número B, terceiro número C)</option>
+            <option value="media" >Media aritmética entre os quatro número</option>
+            <option value="parim" >Par ou Ímpar(Primeiro número)</option>
         </select>
+        <button type="submit" id="submit">Calcular</button>
+        <p id="txtresultado"></p>
     </form>
 </div>
 </main>
+
     <script>
-        function dobro(num1){
-            dob = document.getElementById("num1");
+        let form = document.getElementById("form");
 
+        form.addEventListener("submit", function(event)
+        {
+            event.preventDefault();
 
-        }
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let num3 = document.getElementById("num3").value;
+            let num4 = document.getElementById("num4").value;
+
+            let operacao = document.getElementById("operacoes").value
+
+            let resultado;
+
+            if (operacao === "media")
+            {
+                if(num1 === "" || num2 === "" || num3 === "" ||num4 === "")
+                {
+                    alert("Digite 4 números");
+                    return;
+                }
+                num1 = Number(num1);
+                num2 = Number(num2);
+                num3 = Number(num3);
+                num4 = Number(num4);
+                
+                resultado = (num1 + num2 + num3 + num4) / 4
+
+            }
+
+            else if (operacao === "bhaskara")
+            {
+                if(num1 === "" || num2 === "" || num3 === "")
+                {
+                    alert("Digite 3 números");
+                    return;
+                }
+                num1 = Number(num1);
+                num2 = Number(num2);
+                num3 = Number(num3);
+
+                let delta = (num2 ** 2) - (4 * num1 * num3);
+
+                let resultado1 = (-num2 + Math.sqrt(delta)) / (2 * num1);
+                let resultado2 = (-num2 - Math.sqrt(delta)) / (2 * num1);
+
+                resultado = (resultado1) + " ou " + (resultado2);
+                
+            }
+
+            else
+            {
+                if(num1 === "")
+                {
+                    alert("Digite 1 número");
+                    return;
+                }
+
+                switch(operacao) 
+            {
+                case "dobro":
+                    resultado = num1 * 2;
+                    break;
+                case "triplo":
+                    resultado = num1 * 3;
+                    break;
+                case "quadruplo":
+                    resultado = num1 * 4;
+                    break;
+                case "quintuplo":
+                    resultado = num1 * 5;
+                    break;
+                case "quadrado":
+                    resultado = num1 ** 2;
+                    break;
+                case "cubo":
+                    resultado = num1 ** 3;
+                    break;
+                case "quarta":
+                    resultado = num1 ** 4;
+                    break;
+                case "quinta":
+                    resultado = num1 ** 5;
+                    break;
+                case "sexta":
+                    resultado = num1 ** 6;
+                    break; 
+                case "parim":
+                    if(num1 % 2 == 0)
+                    {
+                        resultado = "Número par";
+                    }
+                    else
+                    {
+                        resultado = "Número impar";
+                    }
+                    break;
+            }
+            }
+            
+
+            document.getElementById("txtresultado").innerText = (resultado);
+            
+        }) ;
     </script>
+
 </body>
 </html>
 
-bit.ly/etec_pam1_2ds_ds
