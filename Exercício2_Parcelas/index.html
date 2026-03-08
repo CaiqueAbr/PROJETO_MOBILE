@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de vendas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(216, 216, 216);
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 0px;
+            padding: 30px;
+        }
+        .conteudos {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: 15px;
+        } 
+        .conteudos h1 {
+            margin-left: 110px;
+        } 
+        .conteudos2 h1 {
+            margin-left: 10px;
+        }
+        .conteudos2  {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin: 15px;
+
+        } 
+        h1 {
+            font-size: 25px;
+            padding-bottom: 0px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 19px;
+            padding: 10px;
+        }
+
+        .conteudo1 {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 10%;
+            padding: 10px;
+            margin-left: 100px; 
+            border-top: 2px solid rgb(121, 121, 121);
+            border-left: 2px solid rgb(121, 121, 121);
+            border-bottom: 2px solid rgb(121, 121, 121);
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.17);  
+        }
+        .conteudo2 {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 10%;
+            padding: 10px;
+            border-top: 2px solid rgb(121, 121, 121);
+            border-right: 2px solid rgb(121, 121, 121);
+            border-top-right-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0,0,0,0.17);    
+        }
+        p {
+            display: flex;
+            gap: 10px;
+            margin-left: 50px;
+            padding: 5px;
+            font-weight: bold;            
+        }
+        
+        .left, .center1, .center2  {
+            display: flex;
+            flex-direction: column;
+            padding-right: 15px;
+            gap: 7px;
+        }
+        .center2 {
+            display: flex;
+            align-items: center;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .item {
+            display: flex;
+            gap: 10px;
+            margin-left: 3px;
+            padding: 5px;
+            font-weight: bold;
+            
+        }
+        .radio {
+            font-weight: bold;
+        }
+        .qnt_parcela {
+            font-weight: bold;
+            
+        }
+        .qnt {
+            display: flex;
+            margin-top: 5px;
+            width: 90px;
+            height: 24px;
+            background-color: rgb(237, 237, 237);
+            border: none;
+            padding: 3px;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .checkbox {
+            accent-color: black;
+            width: 18px;
+            border-radius: 5px;
+        }
+        .button_pagamento {
+            width: 15px;
+            height: 15px;
+            accent-color: black;
+        }
+        #qtn_parcela {
+            width: 30px;
+            border-radius: 5px;
+            border: 2px solid rgb(131, 131, 131);
+        }
+        #total {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+
+    </style>
+</head>
+<body>
+<form action="">
+
+                    <main>
+                        <div class="conteudos">
+                            <h1>Controle de Vendas:</h1>
+
+                            <div class="conteudo1">
+
+                                <div class="left">
+                                <h2>Produto:</h2>
+                                <div class="item">
+                                    <input type="checkbox" id="camisare" class="checkbox">
+                                    <label for="camisare">Camisa Regata</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="camisaso" class="checkbox">
+                                    <label for="camisaso">Camisa Social</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="blusa" class="checkbox">
+                                    <label for="blusa">Blusa</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="pullover" class="checkbox">
+                                    <label for="pullover">Pullover</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="sapato" class="checkbox">
+                                    <label for="sapato">Sapato</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="calca" class="checkbox">
+                                    <label for="calca">Calça</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="meias" class="checkbox">
+                                    <label for="meias">Meias</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="luvas" class="checkbox">
+                                    <label for="luvas">Luvas</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="jaqueta" class="checkbox">
+                                    <label for="jaqueta">Jaqueta</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="bermuda" class="checkbox">
+                                    <label for="bermuda">Bermuda</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="chinelo" class="checkbox">
+                                    <label for="chinelo">Chinelo</label>
+                                </div>
+                                <div class="item">
+                                    <input type="checkbox" id="bone" class="checkbox">
+                                    <label for="bone">Boné</label>
+                                </div>
+                                </div>
+                                <div class="center1">
+                                <h2>Preço (em R$):</h2>
+                                <p class="valor">19.90</p>
+                                <p class="valor">59.90</p>
+                                <p class="valor">119.90</p>
+                                <p class="valor">39.90</p>
+                                <p class="valor">99.90</p>
+                                <p class="valor">38.90</p>
+                                <p class="valor">9.90</p>
+                                <p class="valor">24.90</p>
+                                <p class="valor">329.90</p>
+                                <p class="valor">69.90</p>
+                                <p class="valor">19.90</p>
+                                <p class="valor">6.90</p>
+                                </div>
+                                <div class="center2">
+                                <h2>Quantidade:</h2>
+                                <input type="number" class="qnt" placeholder="0">
+                                <input type="number"  class="qnt" placeholder="0">
+                                <input type="number" class="qnt" placeholder="0">
+                                <input type="number"  class="qnt" placeholder="0">
+                                <input type="number" class="qnt" placeholder="0">
+                                <input type="number" class="qnt" placeholder="0">
+                                <input type="number"  class="qnt" placeholder="0">
+                                <input type="number" class="qnt" placeholder="0">
+                                <input type="number" class="qnt" placeholder="0">
+                                <input type="number"  class="qnt" placeholder="0">
+                                <input type="number"  class="qnt" placeholder="0">
+                                <input type="number" class="qnt" placeholder="0">
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="conteudos2">
+                            <h1>Forma de Pagamento:</h1>
+                            <div class="conteudo2">
+                                <div class="right">
+                                        <div class="radio">
+                                            <input type="radio" name="pagamento" id="vista" class="button_pagamento" >
+                                            <label for="vista">À vista</label>
+                                        </div>
+                                        <div class="radio">
+                                            <input type="radio" name="pagamento" id="parcelado" class="button_pagamento">
+                                            <label for="parcelado">À prazo</label>
+                                        </div>
+                                        <div class="qnt_parcela">
+                                            <label for="qtn_parcela">Quantidade de parcelas:</label>
+                                            <select name="qtn_parcela" id="qtn_parcela">
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                            <div class="resultado">
+                                                <div id="total"></div>
+                                                <div id="parcela"></div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>     
+    </form>        
+        <script>
+        
+        const qnt_parcelas = document.getElementById("qtn_parcela")
+        const metodo_pagamento = document.querySelectorAll('input[name="pagamento"]')
+        const checkboxes = document.querySelectorAll(".checkbox");
+        const precos = document.querySelectorAll(".valor");
+        const quantidade = document.querySelectorAll(".qnt");
+        var total = 0
+
+        qnt_parcelas.addEventListener("change", calcularTotal);
+
+        for (let i = 0; i < metodo_pagamento.length; i++){
+            metodo_pagamento[i].addEventListener("change", calcularTotal);
+        }
+        for (let i = 0; i < checkboxes.length; i++){
+            checkboxes[i].addEventListener("change", calcularTotal)
+        }
+        for (let i = 0; i < quantidade.length; i++){
+            quantidade[i].addEventListener("input", calcularTotal)
+        }
+        
+            
+            function calcularTotal ()
+            {
+                total = 0;
+                for (let i = 0; i < checkboxes.length; i++)
+                {
+                    
+                    if (checkboxes[i].checked){
+
+                        let preco = Number(precos[i].textContent);
+
+                        let qtd = Number(quantidade[i].value);
+
+                        let subtotal = preco * qtd;
+
+                        total += subtotal;
+
+                        document.getElementById("total").textContent = "Total: R$" + total.toFixed(2); 
+
+                        verificarMetodo ()
+                    }  
+                }
+            }
+
+            function verificarMetodo ()
+            {
+                if(metodo_pagamento[1].checked)
+                {
+                    calcularParcela()
+                }
+                else if(metodo_pagamento[0].checked){
+                    let avista = total - (total * 0.085)
+                    document.getElementById("total").textContent = "Total à vista: R$" + avista.toFixed(2);
+                    document.getElementById("parcela").textContent = "";
+                }
+                
+            }
+            function calcularParcela ()
+            {
+                let qnt_parcela = Number(document.getElementById("qtn_parcela").value);
+
+                let valorparcela = (((total * 0.06) + (6.90 * qnt_parcela) + total))/qnt_parcela ;
+
+                if (valorparcela < 10)
+                {
+                    document.getElementById("parcela").textContent = "Valor da parcela não pode ser inferior a R$10";
+                }
+                else{
+                document.getElementById("parcela").textContent = "Parcelas: " + qnt_parcela + " vezes de R$" + valorparcela.toFixed(2);
+                }
+            }
+
+
+        
+        
+    </script>
+
+
+
+</body>
+</html>
