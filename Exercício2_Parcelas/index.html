@@ -19,12 +19,12 @@
             display: flex;
             flex-direction: row;
             gap: 0px;
-            padding: 30px;
+            padding: 25px;
         }
         .conteudos {
             display: flex;
             flex-direction: column;
-            width: 60%;
+            width: 65%;
             margin: 15px;
         } 
         .conteudos h1 {
@@ -285,15 +285,15 @@
 
         qnt_parcelas.addEventListener("change", calcularTotal);
 
-        for (let i = 0; i < metodo_pagamento.length; i++){
-            metodo_pagamento[i].addEventListener("change", calcularTotal);
-        }
-        for (let i = 0; i < checkboxes.length; i++){
-            checkboxes[i].addEventListener("change", calcularTotal)
-        }
-        for (let i = 0; i < quantidade.length; i++){
-            quantidade[i].addEventListener("input", calcularTotal)
-        }
+        metodo_pagamento.forEach((met_pagamento, index) =>{
+            met_pagamento.addEventListener("change", calcularTotal)
+        });
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener("change", calcularTotal)
+        });
+        quantidade.forEach((qnt, index) => {
+            qnt.addEventListener("input", calcularTotal)
+        })
         
             
             function calcularTotal ()
