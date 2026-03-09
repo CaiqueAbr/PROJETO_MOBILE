@@ -299,10 +299,10 @@
             function calcularTotal ()
             {
                 total = 0;
-                for (let i = 0; i < checkboxes.length; i++)
-                {
+
+                checkboxes.forEach((checkbox, i) => {
                     
-                    if (checkboxes[i].checked){
+                    if (checkbox.checked){
 
                         let preco = Number(precos[i].textContent);
 
@@ -315,9 +315,10 @@
                         document.getElementById("total").textContent = "Total: R$" + total.toFixed(2); 
 
                         verificarMetodo ()
-                    }  
-                }
+                    };
+                })
             }
+            
 
             function verificarMetodo ()
             {
