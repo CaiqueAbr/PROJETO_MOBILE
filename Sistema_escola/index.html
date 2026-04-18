@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Sistema escolar</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gerenciamente de Alunos</h1>
+        <p>Cadastro e acompanhamento de desempenho escolar</p>
+    </header>
+    <main>
+        <section class="cadastroEst">
+            <form action="" id="form">
+                <h1>Cadastrar Aluno</h1>
+                <label>Nome do Aluno
+                    <input placeholder="Digite o nome completo" type="text" id="nomeAluno" required>
+                </label>
+                <label>Idade
+                    <input placeholder="Digite a idade" type="number" id="idadeAluno" required min="0" max="130">
+                </label>
+                <label>Nota (0 a 10)
+                    <input placeholder="Digite a nota" type="number" id="notaAluno" required min="0" max="10">
+                </label>
+                <button type="submit" id="buttonEnviar"> Cadastrar Aluno</button>
+            </form>
+            <p id="barra"></p>
+            <div class="estatistic">
+                <h1>Estatística da Turma</h1>
+                <div class="boxTotalAlunos">
+                    <h2>Total de Alunos</h2>
+                    <p id="totalAlunos"></p>
+                </div>
+                <div class="boxMediaTurma">
+                    <h2>Média da Turma</h2>
+                    <p id="mediaTurma"></p>
+                </div>
+                <siv class="boxAprovados">
+                    <h2>Aprovados</h2>
+                    <p id="Aprovados"></p>
+                </siv>
+                <div class="boxReprovados">
+                    <h2>Reprovados</h2>
+                    <p id="Reprovados"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="alunosInfo">
+            
+            <h1>Alunos Cadastrados</h1>
+            
+            <div id="infoSemAlunos">
+                <h2>Nenhum aluno cadastrado ainda.</h2>
+                <p>Cadastre o primeiro aluno usando o formulário ao lado.</p>
+            </div>
+            
+            <div id="listaAlunos">
+            </div>
+
+        </section>
+
+    </main>
+    <script src="src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(225, 235, 255, 0.853);
+}
+header {
+    color: black;
+    font-size: 20px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    p {
+        color: rgba(0, 0, 0, 0.666)
+    }
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 7rem 2rem 7rem;
+
+    .cadastroEst {
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        #form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            gap: 20px;
+
+            h1 {
+                
+                font-weight: 600;
+                color: rgba(0, 0, 0, 0.837);
+                font-size: 1.6rem;
+                padding: 0.8rem;
+            }
+
+            label {
+                color: rgba(0, 0, 0, 0.79);
+                font-weight: 600;
+                font-size: 0.9rem;
+
+                display: flex;
+                flex-direction: column;
+                gap: 0.33rem;
+            }
+            input {
+                height: 2.9rem;
+                width: 20rem;
+                border-radius: 15px;
+                border: 2px solid rgba(0, 0, 0, 0.178);
+                font-size: 14px;
+                padding: 0.5rem;
+                transition: 0.15s;
+
+                &:focus {
+                    outline: none;
+                    border: 2px solid rgb(0, 132, 255);
+                    box-shadow: 0 0 0 2px rgba(0, 110, 201, 0.2);
+                }
+            }
+
+            button {
+                background-color: blue;
+                color: white;
+                width: 20rem;
+                font-weight: bold;
+                height: 2.8rem;
+                border: none;
+                border-radius: 15px;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: rgb(0, 0, 200);
+                }
+            }
+        }
+        #barra {
+            background-color: rgba(0, 0, 0, 0.15);
+            width: 20.2rem;
+            height: 1px;
+        }
+        .estatistic{
+            display: flex;
+            gap: 0.8rem;
+            flex-direction: column;
+
+            h1 {
+                font-weight: 600;
+                color: rgba(0, 0, 0, 0.837);
+                font-size: 18px;
+                padding: 10px;
+            }
+            
+            .boxTotalAlunos, .boxMediaTurma, .boxAprovados, .boxReprovados {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 20rem;
+                height: 3.2rem;
+                font-size: 0.58rem;
+                color: rgba(0, 0, 0, 0.700);
+                border-radius: 15px;
+                padding: 0.7rem;
+
+            }
+            .boxTotalAlunos {
+                background-color: rgba(0, 0, 0, 0.03);
+
+                p{
+                    color: rgb(0, 0, 0);
+                    font-size: 0.9rem;
+
+                }
+            }
+            .boxMediaTurma {
+                background-color: rgba(0, 132, 255, 0.08);
+
+                p{
+                    color: rgb(0, 55, 255);
+                    font-size: 0.9rem;
+
+                }
+            }
+            .boxAprovados {
+                background-color: rgba(14, 209, 0, 0.08);
+
+                p{
+                    color: rgb(55, 255, 0);
+                    font-size: 0.9rem;
+
+                }
+            }
+            .boxReprovados {
+                background-color: rgba(255, 0, 0, 0.08);
+
+                p{
+                    color: rgb(255, 0, 0);
+                    font-size: 0.9rem;
+
+                }
+            }
+            
+        }
+    }
+
+    .alunosInfo{
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        padding: 1.2rem;
+        width: 100%;
+        height: 100%;
+        max-width: 55rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        
+
+        h1 {
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.837);
+            font-size: 1.8rem;
+            padding: 10px;  
+        }
+        h2 {
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 1rem;
+            padding: 10px;
+            padding-top: 6rem;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 0.8rem;
+            padding-bottom: 5rem;
+        }
+
+        #listaAlunos {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+
+            .alunos {
+                padding: 0.8rem;
+                display: flex;
+                flex-direction: column;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 0, 0, 0.146);
+                max-height: 6rem;
+
+                .infoNameSitu
+                {
+                    display: flex;
+                    gap: 1rem;
+                    max-height: 3.0rem;
+                    
+                    p{
+                        font-size: 1.5rem;
+                        color: black;
+                        
+                    }
+                }
+
+                .infoIdadeNota {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0.8rem;
+
+                    p{
+                        font-weight: 600;
+                        font-size: 0.9rem;
+                        color: rgba(0, 0, 0, 0.73);
+                    }
+                }
+            }
+
+        }
+
+    }
+}
