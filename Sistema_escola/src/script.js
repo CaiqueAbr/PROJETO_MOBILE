@@ -14,10 +14,10 @@ form.addEventListener("submit", function(evento)
     
     alunos.push(aluno);
 
-    calcularEstatisticas();
-
     document.getElementById("listaAlunos").innerHTML = "";
-    document.getElementById("infoSemAlunos").innerHTML = ""
+    document.getElementById("infoSemAlunos").innerHTML = "";
+    
+    calcularEstatisticas();
 
     adicionarAlunos ();
 
@@ -43,42 +43,132 @@ function calcularEstatisticas ()
             qntReprovados += 1
         }
     });
-
-    let mediaNotas = somaNotas / qntAlunos
-
+    if (qntAlunos > 0)
+    {
+        let mediaNotas = somaNotas / qntAlunos;
+        document.getElementById("mediaTurma").textContent = mediaNotas.toFixed(2);
+    }
+    else
+    {
+        document.getElementById("mediaTurma").textContent = "0.00";
+    }
     document.getElementById("totalAlunos").textContent = qntAlunos;
-    document.getElementById("mediaTurma").textContent = mediaNotas.toFixed(2);
     document.getElementById("Aprovados").textContent = qntAprovados;
     document.getElementById("Reprovados").textContent = qntReprovados; 
 }
 
 function adicionarAlunos ()
 {
-    
-
     let situacao;
 
-    alunos.forEach((aluno) => 
+    alunos.forEach((aluno, index) => 
     {
         if (aluno.nota >= 6)
         {
            situacao = "Aprovado";
+
+           document.getElementById("listaAlunos").innerHTML += 
+           `<div class="alunos">
+
+                <div class="infoAlunos">
+                    <div class="infoNameSitu">
+                        <p> ${aluno.nome} </p> 
+                        <div class="sitBoxApr"> 
+                            <p> <i class="fa-regular fa-circle-check"></i>${situacao}</p> 
+                        </div>
+                    </div>
+        
+                    <div class="infoIdadeNota">
+                        <p>Idade:</p> 
+                        <p class="resulIdade">${aluno.idade} anos </p>
+                        <p>Nota:</p> 
+                        <p class="resulNotaApr"> ${aluno.nota}</p>
+                    </div>
+                </div>
+                
+            <div class="buttonsAluno">
+                <button onclick="modalDescAluno(${index})" class="btnDescAluno"> <i class="fa-solid fa-circle-info"></i></button>
+                <button onclick="removerAluno(${index})" class="btnExcAluno"> <i class="fa-solid fa-trash-can"></i></button>
+            </div>
+
+
+           </div>`;
         }
         else 
         {
            situacao = "Reprovado";
-        }
 
-        document.getElementById("listaAlunos").innerHTML += 
-        `<div class="alunos">
-            <div class="infoNameSitu">
-                <p> ${aluno.nome} </p> <p> ${situacao} </p>
+           document.getElementById("listaAlunos").innerHTML += 
+           `<div class="alunos">
+
+               <div class="infoAlunos">
+
+                   <div class="infoNameSitu">
+                       <p> ${aluno.nome} </p>
+                       <div class="sitBoxRep">
+                           <p><i class="fa-regular fa-circle-xmark"></i>${situacao}</p>
+                       </div>
+                   </div>
+                   <div class="infoIdadeNota">
+                       <p>Idade:</p>
+                       <p class="resulIdade">${aluno.idade} anos </p>
+                       <p>Nota:</p>
+                       <p class="resulNotaRep"> ${aluno.nota}</p>
+                   </div>
+
+                </div>
+
+            <div class="buttonsAluno">
+
+                <button 
+                onclick="modalDescAluno(${index})" 
+                class="btnDescAluno"> 
+                    <i class="fa-solid fa-circle-info"></i>
+                </button>
+                
+                <button onclick="removerAluno(${index})" class="btnExcAluno"> <i class="fa-solid fa-trash-can"></i> </button>
             </div>
-            <div class="infoIdadeNota">
-                <p>Idade: ${aluno.idade} anos </p>
-                <p>Nota: ${aluno.nota}</p>
-            </div>
-        </div>
-        `;
+
+
+           </div>`;
+        }
     });
+}
+
+function removerAluno (index)
+{
+    alunos.splice(index, 1);
+
+    document.getElementById("listaAlunos").innerHTML = "";
+
+    if (alunos.length === 0)
+    {
+        document.getElementById("infoSemAlunos").innerHTML = 
+        `
+        <i class="fa-solid fa-user-group"></i>
+        <h2>Nenhum aluno cadastrado ainda.</h2>
+        <p>Cadastre o primeiro aluno usando o formulário ao lado.</p>
+        `
+    }
+
+    adicionarAlunos();
+    calcularEstatisticas();
+}
+
+function modalDescAluno(index)
+{
+    const aluno = alunos[index];
+    const situacao = aluno.nota >= 6 ? "Aprovado" : "Reprovado";
+
+    document.getElementById("modalNome").textContent = aluno.nome;
+    document.getElementById("modalIdade").textContent = aluno.idade + " anos";
+    document.getElementById("modalNota").textContent = aluno.nota;
+    document.getElementById("modalSituacao").textContent = situacao;
+
+    document.getElementById("modalOverlay").classList.add("ativo");
+}
+
+function fecharModal()
+{
+    document.getElementById("modalOverlay").classList.remove("ativo");
 }

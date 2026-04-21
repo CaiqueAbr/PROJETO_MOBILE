@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="src/style.css">
     <title>Sistema escolar</title>
 </head>
@@ -14,7 +15,7 @@
     <main>
         <section class="cadastroEst">
             <form action="" id="form">
-                <h1>Cadastrar Aluno</h1>
+                <h1> <i class="fa-solid fa-user-plus"></i> Cadastrar Aluno</h1>
                 <label>Nome do Aluno
                     <input placeholder="Digite o nome completo" type="text" id="nomeAluno" required>
                 </label>
@@ -28,33 +29,36 @@
             </form>
             <p id="barra"></p>
             <div class="estatistic">
-                <h1>Estatística da Turma</h1>
+                <h1><i class="fa-solid fa-arrow-trend-up"></i>Estatística da Turma</h1>
                 <div class="boxTotalAlunos">
                     <h2>Total de Alunos</h2>
-                    <p id="totalAlunos"></p>
+                    <p id="totalAlunos">0</p>
                 </div>
                 <div class="boxMediaTurma">
                     <h2>Média da Turma</h2>
-                    <p id="mediaTurma"></p>
+                    <p id="mediaTurma">0.00</p>
                 </div>
-                <siv class="boxAprovados">
+                <div class="boxAprovados">
                     <h2>Aprovados</h2>
-                    <p id="Aprovados"></p>
-                </siv>
+                    <p id="Aprovados">0</p>
+                </div>
                 <div class="boxReprovados">
                     <h2>Reprovados</h2>
-                    <p id="Reprovados"></p>
+                    <p id="Reprovados">0</p>
                 </div>
             </div>
         </section>
 
-        <section class="alunosInfo">
+        <section id="alunosInfo">
             
-            <h1>Alunos Cadastrados</h1>
+            <h1><i class="fa-solid fa-user"></i> Alunos Cadastrados</h1>
             
             <div id="infoSemAlunos">
+
+                <i class="fa-solid fa-user-group"></i>
                 <h2>Nenhum aluno cadastrado ainda.</h2>
                 <p>Cadastre o primeiro aluno usando o formulário ao lado.</p>
+
             </div>
             
             <div id="listaAlunos">
@@ -63,6 +67,16 @@
         </section>
 
     </main>
+
+    <div id="modalOverlay">
+        <div id="modalBox">
+            <h2 id="modalNome"></h2>
+            <p>Idade: <span id="modalIdade"></span></p>
+            <p>Nota: <span id="modalNota"></span></p>
+            <p>Situação: <span id="modalSituacao"></span></p>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
     <script src="src/script.js"></script>
 </body>
 </html>
