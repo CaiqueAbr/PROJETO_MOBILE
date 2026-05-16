@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>TechStore</title>
 </head>
 <body>
@@ -13,11 +14,15 @@
             <p>PREMIUM ELETRONICS</p>
         </div>
 
-        <button id="btnCart">Cart</button>
+        <button id="btnCart">
+            <i class="bi bi-cart2"></i>
+            Cart
+        </button>
     </header>
     <main>
         <section class="filtro">
-            <form action="">
+            <form action="" id="formFilter">
+                <i class="bi bi-funnel"></i>
                 <select name="" id="">
 
                     <option value="">
@@ -29,13 +34,76 @@
                     <option value="">
                         Acima de R$50
                     </option>
-                    
                 </select>
 
+                <button class="btnFilter">Filtrar</button>
             </form>
         </section>
+            
         <section class="listaProdutos">
+            <form action="" id="formProdutos">
 
+                <div class="divProdutos">
+                    <img src="src/imagens/imgFoneBluetooth.webp" alt="">
+                    <p class="nomeProd">Fone de Ouvido Bluetooth</p>
+                    <p class="pPreco">PREÇO</p>
+                    
+                    <div class="divPrecoButton">
+                        <p class="precoProd">299.90<span>$</span></p>
+                        <button type="submit" class="btnAddProd">
+                            <i class="bi bi-cart2"></i>Add</button>
+                    </div>
+                </div>
+
+                <div class="divProdutos">
+                    <img src="src/imagens/imgMouse.jpeg" alt="">
+                    <p class="nomeProd">Mouse Gamer RGB</p>
+                    <p class="pPreco">PREÇO</p>
+                    
+                    <div class="divPrecoButton">
+                        <p class="precoProd">89.90<span>$</span></p>
+                        <button type="submit" class="btnAddProd">
+                            <i class="bi bi-cart2"></i>Add</button>
+                    </div>
+                </div>
+
+                <div class="divProdutos">
+                    <img src="src/imagens/imgSmartwatch.jpeg" alt="">
+                    <p class="nomeProd">Smartwatch Fitness</p>
+                    <p class="pPreco">PREÇO</p>
+                    
+                    <div class="divPrecoButton">
+                        <p class="precoProd">599.90<span>$</span></p>
+                        <button type="submit" class="btnAddProd">
+                            <i class="bi bi-cart2"></i>Add</button>
+                    </div>
+                </div>
+
+                <div class="divProdutos">
+                    <img src="src/imagens/imgFoneSport.webp" alt="">
+                    <p class="nomeProd">Fone de Ouvido Sport</p>
+                    <p class="pPreco">PREÇO</p>
+                    
+                    <div class="divPrecoButton">
+                        <p class="precoProd">149.90<span>$</span></p>
+                        <button type="submit" class="btnAddProd">
+                            <i class="bi bi-cart2"></i>Add</button>
+                    </div>
+                </div>
+
+                <div class="divProdutos">
+                    <img src="src/imagens/imgWebCam.webp" alt="">
+                    <p class="nomeProd">Webcam Full HD</p>
+                    <p class="pPreco">PREÇO</p>
+                    
+                    <div class="divPrecoButton">
+                        <p class="precoProd">199.90<span>$</span></p>
+                        <button type="submit" class="btnAddProd">
+                            <i class="bi bi-cart2"></i>Add</button>
+                    </div>
+                </div>
+                
+            </form>
         </section>
 
     </main>
