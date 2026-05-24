@@ -23,15 +23,15 @@
         <section class="filtro">
             <form action="" id="formFilter">
                 <i class="bi bi-funnel"></i>
-                <select name="" id="">
+                <select name="" id="selectFilter">
 
-                    <option value="">
+                    <option value="todos">
                         Todos
                     </option>
-                    <option value="">
+                    <option value="ate 50">
                         Até R$50
                     </option>
-                    <option value="">
+                    <option value="acima 50">
                         Acima de R$50
                     </option>
                 </select>
@@ -49,7 +49,7 @@
                     <p class="pPreco">PREÇO</p>
                     
                     <div class="divPrecoButton">
-                        <p class="precoProd">299.90<span>$</span></p>
+                        <p class="precoProd">49.90<span>$</span></p>
                         <button type="submit" class="btnAddProd">
                             <i class="bi bi-cart2"></i>Add</button>
                     </div>
@@ -105,7 +105,40 @@
                 
             </form>
         </section>
+        
+        
+        <dialog id="modalCart">
+            <div class="modalTopo">
+                <div class="modalHeader">
+                    <div class="modalIcone">
+                        <i class="bi bi-cart2"></i>
+                    </div>
+                    <div>
+                        <h2>CARRINHO</h2>
+                        <p id="contadorItens">0 itens</p>
+                    </div>
+                </div>
+                <button id="btnFecharModal">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
 
+            <div id="cartVazio">
+                <i class="bi bi-cart2"></i>
+                <p class="textoVazioTitulo">Carrinho Vazio</p>
+                <p class="textoVazioSub">Adicione produtos para começar</p>
+            </div>
+
+            <div id="cartItens"></div>
+
+            <div id="cartRodape">
+                <div class="totalArea">
+                    <p class="totalLabel">TOTAL</p>
+                    <p class="totalValor"><span id="totalNum">0,00</span> <span class="totalMoeda">R$</span></p>
+                </div>
+                <button id="btnFinalizar">FINALIZAR</button>
+            </div>
+        </dialog>
     </main>
 
 
