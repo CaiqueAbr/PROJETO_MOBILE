@@ -32,7 +32,7 @@ formFilter.addEventListener("submit", (event) =>{
                     i.style.display = "none";
                 }
                 else {
-                i.style.display = "block";
+                    i.style.display = "block";
                 }
             })
     }
